@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  docker_jenkins:
+    container_name: docker-jenkins-lab
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - "127.0.0.1:3000:3000"
